@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.body {
+    background: #a3b0b9; /* Light Blue */
+    min-height: 100vh;
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#board {
+    background: rgb(198, 255, 190); /* Gradient Background */
+    width: 90vmin;
+    height: 90vmin;
+    border: 2px solid black;
+    display: grid;
+    grid-template-rows: repeat(20, 1fr);
+    grid-template-columns: repeat(20, 1fr);
+}
+
+.snake {
+    background-color: purple; /* Default snake color */
+    border: .25vmin solid white;
+    border-radius: 12px;
+}
+
+.head {
+    background-color: black; /* Snake head color */
+    border: 2px solid rgb(255, 255, 255);
+    transform: scale(1.02);
+    border-radius: 9px;
+}
+
+.food1 {
+    background-color: rgb(195, 69, 69); /* Food colors */
+    border: .25vmin solid black;
+    border-radius: 8px;
+}
+
+.food2 {
+    background-color: rgb(94, 11, 229);
+    border: .25vmin solid black;
+    border-radius: 8px;
+}
+
+.food3 {
+    background-color: rgb(23, 198, 117);
+    border: .25vmin solid black;
+    border-radius: 8px;
+}
+
+.food4 {
+    background-color: rgb(15, 143, 186);
+    border: .25vmin solid black;
+    border-radius: 8px;
+}
+
+.food5 {
+    background-color: rgb(235, 164, 23);
+    border: .25vmin solid black;
+    border-radius: 8px;
+}
+
+#info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    font-family: 'New Tegomin', serif;
+}
+
+#info p {
+    background-color: #ffffff; /* Timer background color */
+    font-size: 4vmin; /* Responsive font size */
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Layout for larger screens */
+@media (min-width: 1024px) {
+    .body {
+        flex-direction: row;
+    }
+    
+    #board {
+        margin-right: 20px;
+    }
+    
+    #info {
+        margin-top: 0;
+        width: auto;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* Layout for smaller screens */
+@media (max-width: 1023px) {
+    #info {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
